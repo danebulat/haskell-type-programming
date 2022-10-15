@@ -38,6 +38,7 @@ library
     hs-source-dirs:   src
     exposed-modules:  DynamicLanguage
                     , STMonadEx
+                    , STMonadImpl
     other-modules:    
     build-depends:    base ^>=4.14.3.0
                     , vector
@@ -49,6 +50,7 @@ test-suite htp-test
     main-is:          tests.hs
     other-modules:    DynamicLanguage
                     , STMonadEx
+                    , STMonadImpl                    
     build-depends:    base ^>=4.14.3.0
                     , haskell-type-programming
                     , hspec
