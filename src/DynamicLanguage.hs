@@ -10,7 +10,7 @@ import Data.Maybe    (fromJust, fromMaybe)
 import Data.Typeable
 
 -- --------------------------------------------------------------------------------
--- Dynamic class and eliminator
+-- Dynamic type and eliminator
 
 data Dynamic where
   Dynamic :: Typeable a => a -> Dynamic 
