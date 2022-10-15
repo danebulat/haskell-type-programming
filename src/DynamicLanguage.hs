@@ -82,25 +82,3 @@ dynMult d1 d2 = fromMaybe err $ asum
     ]
   where
     err = error "bad types for dynMult"
-
--- --------------------------------------------------------------------------------
--- Tests 
-
-liftD2Test :: Bool
-liftD2Test = let d1 = Dynamic (22 :: Int)
-                 d2 = Dynamic (4  :: Int)
-                 md = liftD2 @Int @Int d1 d2 (+)
-                 r  = fromDynamic @Int (fromJust md)
-             in fromJust r == 26
-
-dynMultTest :: Bool
-dynMultTest = let d1 = Dynamic ("foo" :: String)
-                  d2 = Dynamic (3     :: Integer)
-                  rd = dynMult d1 d2
-              in fromJust (fromDynamic @String rd) == "foofoofoo"
-
-dynPlusTest :: Bool 
-dynPlusTest = let d1 = Dynamic ("foo" :: String)
-                  d2 = Dynamic (3     :: Integer)
-                  rd = dynPlus d1 d2
-              in fromJust (fromDynamic @String rd) == "foo3"
